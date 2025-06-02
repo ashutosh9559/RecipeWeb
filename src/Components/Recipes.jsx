@@ -8,7 +8,7 @@ const Recipes=()=>{
   const {data}=useContext(foodcontext)
  const navigate=useNavigate()
  return (
-  < div className="min-h-screen w-full bg-[#131D4F] py-6 px-4">
+  < div className="min-h-screen   w-full bg-[#131D4F] py-6 px-4">
 {data && data.length>0 ? <div className="flex flex-wrap justify-center gap-6 p-6 ">
       {data.map((item) => (
         <div
@@ -45,24 +45,33 @@ const Recipes=()=>{
         </div>
         
       ))}
-    </div>: (
-        <div class="min-h-screen  rounded-md p-2">
-  <div class="flex animate-pulse space-x-8">
-    <div class="size-40 rounded-xl bg-gray-200"></div>
-    <div class="flex-1 space-y-2 py-2">
-      <div class="h-2 rounded bg-gray-200"></div>
-      <div class="space-y-20">
-        <h1 className="font-bold text-xl text-white w-full mx-80"><SiCodechef className="mx-40" />You haven't Create any Recipes yet !  </h1>
-        <div class="grid grid-cols-5 gap-8">
-          <div class="col-span-2 h-2 rounded bg-gray-200"></div>
-          <div class="col-span-1 h-2 rounded bg-gray-200"></div>   
+ </div> : (
+  <div className="min-h-screen rounded-md p-4 flex flex-col items-center justify-center">
+    <div className="flex flex-col md:flex-row animate-pulse space-y-6 md:space-y-0 md:space-x-8 items-center w-full">
+      
+      <div className="w-40 h-40 rounded-xl bg-gray-200"></div>
+
+      <div className="flex-1 space-y-4 py-2 w-full max-w-xl">
+        <div className="h-2 rounded bg-gray-200 w-1/2 mx-auto"></div>
+
+        <div className="space-y-6 text-center">
+          <h1 className="font-bold text-xl text-white flex flex-col items-center">
+            <SiCodechef className="text-4xl mb-2 text-white" />
+            You haven't created any recipes yet!
+          </h1>
+
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-4">
+            <div className="col-span-1 md:col-span-2 h-2 rounded bg-gray-200"></div>
+            <div className="col-span-1 h-2 rounded bg-gray-200"></div>
+          </div>
+
+          <div className="h-2 rounded bg-gray-200 w-3/4 mx-auto"></div>
         </div>
-        <div class="h-2 rounded bg-gray-200"></div>
       </div>
     </div>
   </div>
-</div>
-      )}
+)}
+
   </div>
  )
 
