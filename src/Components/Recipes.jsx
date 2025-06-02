@@ -24,7 +24,11 @@ const Recipes=()=>{
 
           {/* Overlay gradient */}
           <div className=" w-full bg-gradient-to-b from-black to-transparent p-4">
-            <h2 className="font-bold text-white hover:text-green-800 uppercase text-2xl">{item.title}</h2>
+            <h2 className="font-bold text-white hover:text-green-800 uppercase text-2xl">{
+    item.title.split(" ").length > 2
+      ? item.title.split(" ").slice(0, 2).join(" ") + "..."
+      : item.title
+  }</h2>
           </div>
 
           {/* Info below image (optional) */}
