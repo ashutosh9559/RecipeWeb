@@ -15,7 +15,7 @@ const MainRoute=()=>{
     <Routes>
       < Route path='/' element={<Home/>}/>
       <Route path="/products" element={<Products/>}>
-       { <Route path="/products/detail/:id" element={<ProductsDetails/>}/>   /* This id get from Product when click "view details" navigate(`/products/detail/${item.id}) */}
+       { <Route path="detail/:id" element={<ProductsDetails/>}/>   /* This id get from Product when click "view details" navigate(`/products/detail/${item.id}) */}
       </Route>
       <Route path="/recipes" element={<Recipes />}/>
       < Route path='/about' element={<About/>}/>
